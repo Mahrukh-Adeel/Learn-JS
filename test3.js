@@ -64,4 +64,40 @@ for (const key in lang) {
     console.log(lang[key]);
 }
 
-lang.forEach()
+lang.forEach( function (val){
+    console.log(val);
+} )
+
+
+function print(item){
+    console.log(item);
+}
+lang.forEach(print)
+
+lang.forEach( (item, index, arr)=> {
+    console.log(item, index, arr);
+} )
+
+const nums = [1, 2, 3, 4, 5, 6, 7]
+
+const num = nums.filter( (num) => {
+    return num > 5
+} )
+
+const newNums = []
+nums.forEach( (num) => {
+    if (num > 4) {
+        newNums.push(num)
+    }
+} )
+console.log(newNums);
+
+//Scope needs return
+
+const num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const num2 = num1.map( (num) => { return num + 10})
+console.log(num2)
+
+
+const myTotal = myNums.reduce( (acc, curr) => acc+curr, 0)
+console.log(myTotal);
