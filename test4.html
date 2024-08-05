@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <div class="bg-black">
+    <!-- <div class="bg-black">
         <h1 class="heading">DOM stuff</h1>
         <p>lorem lore m lorm lorem lorem</p>
         <ul>
@@ -20,6 +20,68 @@
             <li class="list"></li>
             <li class="list"></li>
         </ul>
-    </div>
+    </div> -->
+    <!-- <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div> -->
+    <ul class="l">
+        <li>js</li>
+    </ul>
 </body>
+<script>
+    function addLang(name){
+        const lii= document.createElement('li')
+        lii.innrHTML = `${name}`
+        document.querySelector('.lang')
+            appendChild(lii);
+        
+    }
+    addLang("python")
+    addLang("java")
+    //better version
+    function addLange(name){
+        const li = document.createElement('li')
+        const txt = document.createTextNode(name)
+        li.appendChild(txt)
+        document.querySelector('.lang').appendChild(li)
+    }
+    //edit element
+    const slang = document.querySelector('li:nth-child(li)')
+    const nli = document.createElement("li")
+    nli.textContent='apple'
+    slang.replaceWith(nli)
+</script>
+<script>
+    const parent = document.querySelector(".parent")
+    console.log(parent);
+    console.log(parent.childern)
+    console.log(parent.childern[1].innerHTML);
+    for (let index = 0; index < parent.childern.length; index++) {
+        console.log(parent.childern[i].innerHTML);
+        
+    }
+    parent.childern[1].style.color='yellow'
+    console.log(parent.firstElementChild)
+    const day1 = document.querySelector('.day')
+    console.log(day1);
+    console.log(day1.parentElement)
+    console.log(day1.nextElementSibling)
+    console.log("nodes", parent.childNodes)
+</script>
+<script>
+    const div= document.createElement('div')
+    console.log(div)
+    div.className= 'main'
+    div.id= Math.round(Math.random()*10+1)
+    div.setAttribute('title','gen title')
+    div.style.backgroundColor='white'
+    div.style.padding='10px'
+    div.innerHTML='abc'
+    const txt= document.createTextNode("xyz")
+    div.appendChild(txt)
+    document.body.appendChild(div)
+</script>
 </html>
