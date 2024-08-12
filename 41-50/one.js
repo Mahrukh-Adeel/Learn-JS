@@ -20,3 +20,16 @@ const user2 = new users("you", 5, false)
 console.log(user1)
 console.log(user2.constructor)
 
+function createUser(username, score){
+    this.username = username
+    this.score = score
+}
+createUser.prototype.increment = function(){
+    this.score++
+}
+createUser.prototype.print = function(){
+    console.log(`Score: ${this.score}`);
+}
+const you = new createUser("you", 33)
+const me = createUser("me", 44)
+you.print()
